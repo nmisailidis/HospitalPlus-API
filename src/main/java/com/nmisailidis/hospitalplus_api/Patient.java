@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,10 +15,10 @@ public class Patient{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long patient_id;
+    private Long patientId;
 
     @Column(unique = true, nullable = false)
-    private String national_id;
+    private String nationalId;
 
     @Column(nullable = false)
     private String firstName;
