@@ -137,7 +137,6 @@ HospitalPlus-API/
 | PUT | `/api/patients/{id}` | Update an existing patient | 🔒 Bearer token |
 | DELETE | `/api/patients/{id}` | Delete a patient | 🔒 Bearer token |
 | GET | `/api/patients/search?amka={amka}` | Search by AMKA | 🔒 Bearer token |
-| GET | `/api/patients/search?lastName={name}` | Search by last name | 🔒 Bearer token |
 
 ### Example Usage
 
