@@ -12,7 +12,7 @@ A modern, secure REST API for hospital patient management, built with **Spring B
 ## ✨ Features
 
 - **Patient Management (CRUD)** — Create, read, update and delete patient records
-- **Advanced Search** — Query patients by AMKA (national ID) or last name
+- **Advanced Search** — Query patients by AMKA
 - **JWT Authentication** — Stateless, token-based security with BCrypt password hashing
 - **Protected Endpoints** — All patient routes require a valid Bearer token
 - **Input Validation** — Bean Validation with meaningful error responses
