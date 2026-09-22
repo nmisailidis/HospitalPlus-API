@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/hospitalPlus")
+@RequestMapping("/hospitalPlus/patients")
 public class PatientController {
 
     private final PatientService patientService;
@@ -21,26 +21,35 @@ public class PatientController {
     }
 
 
-    @GetMapping("/patients")
-    public List<Patient> getAllpatients() {
+    @GetMapping()
+    public List<Patient> getAllPatients() {
         return patientService.getAllPatients();
     }
 
+    @GetMapping("/{id}")
+    public Patient searchPatient(@PathVariable Long id) {
+        return patientService.searchPatient(id);
+    }
 
-    @PostMapping("/patients")
+    @GetMapping("/search?amka={amka}")
+    public Patient searchPatient(@PathVariable String amka) {
+        return patientService.searchPatient(amka);
+    }
+
+    @PostMapping()
     public ResponseEntity<Patient> addPatient(@RequestBody Patient patient) {
         patientService.createPatient(patient);
         return ResponseEntity.status(HttpStatus.CREATED).body(patient);
     }
 
 
-    @PatchMapping("/patients/{id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<Patient> updatePatient(@PathVariable Long id, @RequestBody PatientUpdateRequest request) {
         Patient updatedPatient = patientService.updatePatient(id, request);
         return ResponseEntity.ok(updatedPatient);
     }
 
-    @DeleteMapping("/patients/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deletePatient(@PathVariable Long id) {
 
         patientService.deactivatePatient(id);

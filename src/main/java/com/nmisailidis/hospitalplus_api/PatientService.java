@@ -1,13 +1,8 @@
 package com.nmisailidis.hospitalplus_api;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
-
-import static org.springframework.data.util.ClassUtils.ifPresent;
 
 @Service
 public class PatientService {
@@ -29,10 +24,9 @@ public class PatientService {
     }
 
     //searches a patient with its nationalId
-    public Patient searchPatient(Patient patient) {
+    public Patient searchPatient(String amka) {
 
-        String nationalId = patient.getNationalId();
-        return patientRepository.findByNationalId(nationalId)
+        return patientRepository.findByAmka(amka)
                 .orElseThrow(() -> new RuntimeException("The patient does not exist"));
     }
 

@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -16,8 +19,8 @@ public class Allergy {
     private int allergyId;
     private String allergyName;
 
-    @ManyToOne
-    private Patient patient;
+    @ManyToMany
+    private Set<Patient> patients = new HashSet<>();
 
 
 }

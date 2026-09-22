@@ -19,6 +19,7 @@ public class PatientUpdateRequest {
     private String emergencyContactName;
     private String emergencyContactPhone;
     private String bloodGroup;
+    private boolean activeStatus;
 
 }
 

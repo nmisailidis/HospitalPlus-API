@@ -17,8 +17,8 @@ public class Patient{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long patientId;
 
-    @Column(unique = true, nullable = false)
-    private String nationalId;
+    @Column(name = "national_id",unique = true, nullable = false)
+    private String amka;
 
     @Column(nullable = false)
     private String firstName;
