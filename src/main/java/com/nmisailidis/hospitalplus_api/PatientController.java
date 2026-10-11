@@ -38,14 +38,14 @@ public class PatientController {
     }
 
     @PostMapping()
-    public ResponseEntity<Patient> addPatient(@Valid @RequestBody Patient patient) {
-        patientService.createPatient(patient);
-        return ResponseEntity.status(HttpStatus.CREATED).body(patient);
+    public ResponseEntity<Patient> addPatient(@Valid @RequestBody PatientCreationRequest request) {
+        Patient saved = patientService.createPatient(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
 
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Patient> updatePatient(@Valid @PathVariable Long id, @RequestBody PatientUpdateRequest request) {
+    public ResponseEntity<Patient> updatePatient(@PathVariable Long id, @Valid @RequestBody PatientUpdateRequest request) {
         Patient updatedPatient = patientService.updatePatient(id, request);
         return ResponseEntity.ok(updatedPatient);
     }

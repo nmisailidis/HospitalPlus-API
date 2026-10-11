@@ -39,7 +39,6 @@ public class Patient{
 
     @NotBlank(message = "Email is required")
     @Email(message = "Email must contain '@' symbol")
-    @Column(unique = true)
     private String email;
     private String address;
     private String emergencyContactName;

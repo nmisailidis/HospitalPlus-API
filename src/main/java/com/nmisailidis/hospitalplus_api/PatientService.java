@@ -14,7 +14,17 @@ public class PatientService {
     }
 
     //creates a patient and adds it in the database
-    public Patient createPatient(Patient patient) {
+    public Patient createPatient(PatientCreationRequest request) {
+        Patient patient = new Patient();
+        patient.setAmka(request.getAmka());
+        patient.setFirstName(request.getFirstName());
+        patient.setLastName(request.getLastName());
+        patient.setDateOfBirth(request.getDateOfBirth());
+        patient.setEmail(request.getEmail());
+        patient.setAddress(request.getAddress());
+        patient.setEmergencyContactName(request.getEmergencyContactName());
+        patient.setEmergencyContactPhone(request.getEmergencyContactPhone());
+        patient.setBloodGroup(request.getBloodGroup());
         return patientRepository.save(patient);
     }
 
