@@ -247,11 +247,11 @@ Swagger UI: `http://localhost:8080/swagger-ui.html`
 
 ## 🗺️ Roadmap
 
-- [ ] Project setup (Spring Initializr, layered structure)
-- [ ] Patient entity + repository
-- [ ] PostgreSQL integration
-- [ ] DTOs + validation
-- [ ] Patient CRUD + search endpoints
+- [X] Project setup (Spring Initializr, layered structure)
+- [X] Patient entity + repository
+- [X] PostgreSQL integration
+- [X] DTOs + validation
+- [X] Patient CRUD + search endpoints
 - [ ] Swagger documentation
 - [ ] JWT authentication (register / login / protected routes)
 - [ ] Unit & integration tests (JUnit 5 + Mockito)
