@@ -11,15 +11,15 @@ A modern, secure REST API for hospital patient management, built with **Spring B
 
 ## ✨ Features
 
-- **Patient Management (CRUD)** — Create, read, update and delete patient records
-- **Advanced Search** — Query patients by AMKA
+- **Patient Management (CRUD)** — Create, read, update and delete patient records ✅
+- **Advanced Search** — Query patients by AMKA ✅
 - **JWT Authentication** — Stateless, token-based security with BCrypt password hashing
 - **Protected Endpoints** — All patient routes require a valid Bearer token
-- **Input Validation** — Bean Validation with meaningful error responses
+- **Input Validation** — Bean Validation with meaningful error responses ✅
 - **Centralized Error Handling** — Consistent API errors via `@ControllerAdvice`
 - **API Documentation** — Interactive Swagger / OpenAPI UI
-- **Layered Architecture** — Clean separation: Controller → Service → Repository
-- **DTO Pattern** — Entities are never exposed directly to API clients
+- **Layered Architecture** — Clean separation: Controller → Service → Repository ✅
+- **DTO Pattern** — Entities are never exposed directly to API clients ✅
 
 ---
 
@@ -131,12 +131,12 @@ HospitalPlus-API/
 
 | Method | Endpoint | Description | Auth |
 | --- | --- | --- | --- |
-| GET | `/api/patients` | List all patients | 🔒 Bearer token |
-| GET | `/api/patients/{id}` | Get a patient by ID | 🔒 Bearer token |
-| POST | `/api/patients` | Create a new patient | 🔒 Bearer token |
-| PUT | `/api/patients/{id}` | Update an existing patient | 🔒 Bearer token |
-| DELETE | `/api/patients/{id}` | Deactivate a patient | 🔒 Bearer token |
-| GET | `/api/patients/search/{amka}` | Search by AMKA | 🔒 Bearer token |
+| GET | `/hospitalPlus/patients` | List all patients | 🔒 Bearer token |
+| GET | `/hospitalPlus/patients/{id}` | Get a patient by ID | 🔒 Bearer token |
+| POST | `/hospitalPlus/patients` | Create a new patient | 🔒 Bearer token |
+| PATCH | `/hospitalPlus/patients/{id}` | Update an existing patient | 🔒 Bearer token |
+| DELETE | `/hospitalPlus/patients/{id}` | Deactivate a patient | 🔒 Bearer token |
+| GET | `/hospitalPlus/patients/search/{amka}` | Search by AMKA | 🔒 Bearer token |
 
 ### Example Usage
 
