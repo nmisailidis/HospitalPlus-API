@@ -54,6 +54,9 @@ public class PatientService {
         Patient existingPatient = patientRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Patient not dound with id: " + id));
 
+        if (request.getAmka() != null) {
+            existingPatient.setAmka(request.getAmka());
+        }
 
         if (request.getFirstName() != null) {
             existingPatient.setFirstName(request.getFirstName());
@@ -71,6 +74,14 @@ public class PatientService {
             existingPatient.setGender(request.getGender());
         }
 
+        if (request.getPhoneNumber() != null) {
+            existingPatient.setPhoneNumber(request.getPhoneNumber());
+        }
+
+        if (request.getEmail() != null) {
+            existingPatient.setEmail(request.getEmail());
+        }
+
         if (request.getAddress() != null) {
             existingPatient.setAddress(request.getAddress());
         }
@@ -85,6 +96,10 @@ public class PatientService {
 
         if (request.getBloodGroup() != null) {
             existingPatient.setBloodGroup(request.getBloodGroup());
+        }
+
+        if (request.getActiveStatus() != existingPatient.getActiveStatus()) {
+            existingPatient.setActiveStatus(request.getActiveStatus());
         }
 
         return patientRepository.save(existingPatient);

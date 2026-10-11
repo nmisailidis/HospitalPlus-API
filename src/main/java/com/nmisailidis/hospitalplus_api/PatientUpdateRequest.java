@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Data
 public class PatientUpdateRequest {
 
-    private Long national_id;
+    private String amka;
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
@@ -21,5 +21,8 @@ public class PatientUpdateRequest {
     private String bloodGroup;
     private boolean activeStatus;
 
+    public boolean getActiveStatus() {
+        return activeStatus;
+    }
 }
 

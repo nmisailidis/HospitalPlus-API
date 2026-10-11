@@ -32,7 +32,7 @@ public class PatientController {
         return patientService.searchPatient(id);
     }
 
-    @GetMapping("/search?amka={amka}")
+    @GetMapping("/search/{amka}")
     public Patient searchPatient(@PathVariable String amka) {
         return patientService.searchPatient(amka);
     }

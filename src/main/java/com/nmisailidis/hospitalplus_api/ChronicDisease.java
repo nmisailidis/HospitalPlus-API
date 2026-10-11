@@ -15,6 +15,7 @@ public class ChronicDisease {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long chronicDiseaseId;
 
+    @Column(unique = true)
     private String chronicDiseaseName;
 
     @ManyToOne

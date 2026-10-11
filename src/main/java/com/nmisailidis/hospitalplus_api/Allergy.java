@@ -17,6 +17,8 @@ public class Allergy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int allergyId;
+
+    @Column(unique = true)
     private String allergyName;
 
     @ManyToMany

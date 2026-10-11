@@ -21,7 +21,7 @@ public class Patient{
     private Long patientId;
 
     @NotBlank(message = "User must have AMKA")
-    @Column(name = "national_id",unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String amka;
 
     @NotBlank(message = "User 's first name can not be empty")
@@ -47,4 +47,8 @@ public class Patient{
     private String bloodGroup;
 
     private boolean activeStatus = true;
+
+    public boolean getActiveStatus() {
+        return activeStatus;
+    }
 }
