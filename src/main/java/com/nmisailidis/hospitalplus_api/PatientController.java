@@ -2,6 +2,7 @@ package com.nmisailidis.hospitalplus_api;
 
 
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,14 +38,14 @@ public class PatientController {
     }
 
     @PostMapping()
-    public ResponseEntity<Patient> addPatient(@RequestBody Patient patient) {
+    public ResponseEntity<Patient> addPatient(@Valid @RequestBody Patient patient) {
         patientService.createPatient(patient);
         return ResponseEntity.status(HttpStatus.CREATED).body(patient);
     }
 
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Patient> updatePatient(@PathVariable Long id, @RequestBody PatientUpdateRequest request) {
+    public ResponseEntity<Patient> updatePatient(@Valid @PathVariable Long id, @RequestBody PatientUpdateRequest request) {
         Patient updatedPatient = patientService.updatePatient(id, request);
         return ResponseEntity.ok(updatedPatient);
     }
