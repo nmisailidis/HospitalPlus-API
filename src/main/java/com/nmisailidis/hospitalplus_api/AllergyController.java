@@ -1,9 +1,9 @@
 package com.nmisailidis.hospitalplus_api;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +28,22 @@ public class AllergyController {
         return allergyService.getAllergy(id);
     }
 
+    @PostMapping
+    public ResponseEntity<Allergy> createAllergy(@Valid @RequestBody AllergyCreationRequest request) {
+        Allergy allergy = allergyService.creatAllergy(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(allergy);
+    }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Allergy> updateAllergy(@PathVariable int id, @Valid @RequestBody AllergyUpdateRequest request) {
+        Allergy updateAllergy = allergyService.updateAllergy(id, request);
+        return ResponseEntity.ok(updateAllergy);
+    }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteAllergy(@PathVariable int id) {
+        allergyService.deleteAllergy(id);
+        return ResponseEntity.ok("Allergy with id: " + id + " deleted successfully");
+    }
 
 }
