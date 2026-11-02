@@ -1,5 +1,9 @@
-package com.nmisailidis.hospitalplus_api;
+package com.nmisailidis.hospitalplus_api.service;
 
+import com.nmisailidis.hospitalplus_api.dto.AllergyCreationRequest;
+import com.nmisailidis.hospitalplus_api.repository.AllergyRepository;
+import com.nmisailidis.hospitalplus_api.dto.AllergyUpdateRequest;
+import com.nmisailidis.hospitalplus_api.entity.Allergy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

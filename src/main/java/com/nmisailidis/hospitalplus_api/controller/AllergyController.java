@@ -1,5 +1,9 @@
-package com.nmisailidis.hospitalplus_api;
+package com.nmisailidis.hospitalplus_api.controller;
 
+import com.nmisailidis.hospitalplus_api.entity.Allergy;
+import com.nmisailidis.hospitalplus_api.dto.AllergyCreationRequest;
+import com.nmisailidis.hospitalplus_api.service.AllergyService;
+import com.nmisailidis.hospitalplus_api.dto.AllergyUpdateRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

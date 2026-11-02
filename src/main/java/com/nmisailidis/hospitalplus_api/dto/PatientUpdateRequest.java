@@ -1,5 +1,5 @@
 
-package com.nmisailidis.hospitalplus_api;
+package com.nmisailidis.hospitalplus_api.dto;
 
 import lombok.Data;
 

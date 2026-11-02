@@ -1,7 +1,11 @@
-package com.nmisailidis.hospitalplus_api;
+package com.nmisailidis.hospitalplus_api.controller;
 
 
 
+import com.nmisailidis.hospitalplus_api.entity.Patient;
+import com.nmisailidis.hospitalplus_api.dto.PatientCreationRequest;
+import com.nmisailidis.hospitalplus_api.service.PatientService;
+import com.nmisailidis.hospitalplus_api.dto.PatientUpdateRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

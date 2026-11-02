@@ -1,23 +1,35 @@
-package com.nmisailidis.hospitalplus_api;
+package com.nmisailidis.hospitalplus_api.entity;
 
-
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
-public class PatientCreationRequest {
+@Entity
+public class Patient{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long patientId;
 
     @NotBlank(message = "User must have AMKA")
+    @Column(unique = true, nullable = false)
     private String amka;
 
     @NotBlank(message = "User 's first name can not be empty")
+    @Column(nullable = false)
     private String firstName;
 
     @NotBlank(message = "User 's last name should not be empty")
+    @Column(nullable = false)
     private String lastName;
 
     @Past(message = "date of birth should be a past date")
@@ -32,4 +44,10 @@ public class PatientCreationRequest {
     private String emergencyContactName;
     private String emergencyContactPhone;
     private String bloodGroup;
+
+    private boolean activeStatus = true;
+
+    public boolean getActiveStatus() {
+        return activeStatus;
+    }
 }

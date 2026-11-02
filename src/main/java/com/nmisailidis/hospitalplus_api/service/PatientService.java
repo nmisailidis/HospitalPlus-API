@@ -1,5 +1,9 @@
-package com.nmisailidis.hospitalplus_api;
+package com.nmisailidis.hospitalplus_api.service;
 
+import com.nmisailidis.hospitalplus_api.dto.PatientCreationRequest;
+import com.nmisailidis.hospitalplus_api.repository.PatientRepository;
+import com.nmisailidis.hospitalplus_api.dto.PatientUpdateRequest;
+import com.nmisailidis.hospitalplus_api.entity.Patient;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

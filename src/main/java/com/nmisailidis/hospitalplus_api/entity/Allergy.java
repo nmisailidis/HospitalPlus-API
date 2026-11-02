@@ -1,4 +1,4 @@
-package com.nmisailidis.hospitalplus_api;
+package com.nmisailidis.hospitalplus_api.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

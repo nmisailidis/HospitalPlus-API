@@ -1,5 +1,6 @@
-package com.nmisailidis.hospitalplus_api;
+package com.nmisailidis.hospitalplus_api.repository;
 
+import com.nmisailidis.hospitalplus_api.entity.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
