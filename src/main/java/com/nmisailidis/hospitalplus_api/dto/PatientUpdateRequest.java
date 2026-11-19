@@ -1,6 +1,7 @@
 
 package com.nmisailidis.hospitalplus_api.dto;
 
+import com.nmisailidis.hospitalplus_api.enums.Gender;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -12,7 +13,7 @@ public class PatientUpdateRequest {
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
-    private String gender;
+    private Gender gender;
     private String phoneNumber;
     private String email;
     private String address;

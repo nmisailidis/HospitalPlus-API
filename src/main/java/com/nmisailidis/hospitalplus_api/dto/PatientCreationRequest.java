@@ -1,6 +1,7 @@
 package com.nmisailidis.hospitalplus_api.dto;
 
 
+import com.nmisailidis.hospitalplus_api.enums.Gender;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
@@ -21,7 +22,7 @@ public class PatientCreationRequest {
 
     @Past(message = "date of birth should be a past date")
     private LocalDate dateOfBirth;
-    private String gender;
+    private Gender gender;
     private String phoneNumber;
 
     @NotBlank(message = "Email is required")
