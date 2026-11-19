@@ -24,6 +24,8 @@ public class PatientService {
         patient.setFirstName(request.getFirstName());
         patient.setLastName(request.getLastName());
         patient.setDateOfBirth(request.getDateOfBirth());
+        patient.setGender(request.getGender());
+        patient.setPhoneNumber(request.getPhoneNumber());
         patient.setEmail(request.getEmail());
         patient.setAddress(request.getAddress());
         patient.setEmergencyContactName(request.getEmergencyContactName());

@@ -1,5 +1,6 @@
 package com.nmisailidis.hospitalplus_api.entity;
 
+import com.nmisailidis.hospitalplus_api.enums.Gender;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -34,7 +35,7 @@ public class Patient{
 
     @Past(message = "date of birth should be a past date")
     private LocalDate dateOfBirth;
-    private String gender;
+    private Gender gender;
     private String phoneNumber;
 
     @NotBlank(message = "Email is required")
