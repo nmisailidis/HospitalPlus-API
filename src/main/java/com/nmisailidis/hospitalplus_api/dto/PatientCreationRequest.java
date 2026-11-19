@@ -1,6 +1,7 @@
 package com.nmisailidis.hospitalplus_api.dto;
 
 
+import com.nmisailidis.hospitalplus_api.enums.BloodGroup;
 import com.nmisailidis.hospitalplus_api.enums.Gender;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -31,5 +32,5 @@ public class PatientCreationRequest {
     private String address;
     private String emergencyContactName;
     private String emergencyContactPhone;
-    private String bloodGroup;
+    private BloodGroup bloodGroup;
 }

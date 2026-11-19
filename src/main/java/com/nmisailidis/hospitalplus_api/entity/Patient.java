@@ -1,5 +1,6 @@
 package com.nmisailidis.hospitalplus_api.entity;
 
+import com.nmisailidis.hospitalplus_api.enums.BloodGroup;
 import com.nmisailidis.hospitalplus_api.enums.Gender;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -10,6 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,34 +23,38 @@ public class Patient{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long patientId;
 
-    @NotBlank(message = "User must have AMKA")
     @Column(unique = true, nullable = false)
     private String amka;
 
-    @NotBlank(message = "User 's first name can not be empty")
     @Column(nullable = false)
     private String firstName;
 
-    @NotBlank(message = "User 's last name should not be empty")
     @Column(nullable = false)
     private String lastName;
 
-    @Past(message = "date of birth should be a past date")
     private LocalDate dateOfBirth;
     private Gender gender;
     private String phoneNumber;
 
-    @NotBlank(message = "Email is required")
-    @Email(message = "Email must contain '@' symbol")
     private String email;
     private String address;
     private String emergencyContactName;
     private String emergencyContactPhone;
-    private String bloodGroup;
+
+    @Enumerated(EnumType.STRING)
+    private BloodGroup bloodGroup;
 
     private boolean activeStatus = true;
 
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
     public boolean getActiveStatus() {
         return activeStatus;
+    }
+
+    @PrePersist
+    void onCreate() {
+        createdAt = LocalDateTime.now();
     }
 }
