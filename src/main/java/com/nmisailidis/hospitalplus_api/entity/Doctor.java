@@ -10,6 +10,8 @@ import org.hibernate.annotations.CollectionIdJavaClass;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -36,6 +38,9 @@ public class Doctor {
 
     private String email;
     private String address;
+
+    @OneToMany(mappedBy = "doctor")
+    private Set<Appointment> doctorsAppointment = new HashSet<>();
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
