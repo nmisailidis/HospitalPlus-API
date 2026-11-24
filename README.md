@@ -27,8 +27,8 @@ A modern, secure REST API for hospital patient management, built with **Spring B
 
 | Technology | Purpose |
 | --- | --- |
-| Java 17 | Core application language |
-| Spring Boot 3 | Application framework |
+| Java 21 | Core application language |
+| Spring Boot 4 | Application framework |
 | Spring Web | REST API layer |
 | Spring Data JPA | Database access (Hibernate) |
 | Spring Security | Authentication & authorization |
